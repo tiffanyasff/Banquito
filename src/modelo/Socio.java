@@ -15,13 +15,13 @@ import java.time.format.DateTimeFormatter;
  */
 public class Socio extends Persona {
     
-    private LocalDateTime fechaCreacion;
+    private LocalDateTime fechaActual;
     ;
  
 
     public Socio (String nombre, String id, String tipo){      
         super(nombre, id, tipo);
-        this.fechaCreacion = LocalDateTime.now();
+        this.fechaActual = LocalDateTime.now();
         this.dinero = 1000;
     }
     
@@ -30,26 +30,27 @@ public class Socio extends Persona {
     }
     
     private boolean esPrimerDiaDelMes() {
-        return fechaCreacion.getDayOfMonth() == 1;
+        return fechaActual.getDayOfMonth() == 1;
+        
     }
      
      public void realizarPago(Banco banco, int cantidad) {
         //System.out.println("Nombre del socio: " + nombre);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String fechaFormateada = getFechaCreacion().format(formatter);
-        System.out.println("Fecha de creación: " + fechaFormateada);
+        String fechaFormateada = getFechaActual().format(formatter);
+        System.out.println("Fecha de transaccion: " + fechaFormateada);
 
-        if (esPrimerDiaDelMes()) {
-            System.out.println("Estado: prime");
+        if (dinero >= 25 && esPrimerDiaDelMes()) {
+            System.out.println("Pago automatico realizado");
             banco.procesarPago(this, cantidad);
         } else {
-            System.out.println("Estado: no prime");
+            System.out.println("No se ha realizado pago automatico");
         }
     } 
     
      // Getter para obtener la fecha de creación
-    public LocalDateTime getFechaCreacion() {
-        return fechaCreacion;
+    public LocalDateTime getFechaActual() {
+        return fechaActual;
     }
     
 }
