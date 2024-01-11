@@ -33,7 +33,7 @@ public class Socio extends Persona {
         return fechaActual.getDayOfMonth() == 1;
         
     }
-     
+     //tal vez esta funcion deba cambiar i poner el for esprimer dia afuera y adentro un if con realizar pago si le alcanza la plata
      public void realizarPago(Banco banco, int cantidad) {
         //System.out.println("Nombre del socio: " + nombre);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");

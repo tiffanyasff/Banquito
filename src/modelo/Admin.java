@@ -6,9 +6,15 @@ package modelo;
 
 /**
  *
- * @author USER CT
+ * @author Andres
  */
-public class Prestamo {
+public class Admin extends Persona {
     
+    public Admin (String nombre, String id, String tipo){
+        super(nombre, id, tipo);
+    }
+    
+    public void crearPrestamo(){
+}
     
 }
