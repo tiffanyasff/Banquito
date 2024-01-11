@@ -15,6 +15,7 @@ public class Admin extends Persona {
     }
     
     public void crearPrestamo(){
-}
+        
+    }
     
 }
