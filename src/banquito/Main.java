@@ -5,9 +5,11 @@
 package banquito;
 
 import BancoDao.bancoDAO;
+import controlador.ControladorLogIn;
 import java.time.format.DateTimeFormatter;
 import modelo.Banco;
 import modelo.Socio;
+import vista.VentanaLogIn;
 
 /**
  *
@@ -35,9 +37,12 @@ public class Main {
 
         // Intentar realizar un pago de 100 unidades (fondos insuficientes)
         //socio.realizarPago(banco, 100);
-        bancoDAO tititeamo = new bancoDAO();
+        bancoDAO modelo = new bancoDAO();
+        VentanaLogIn vista = new VentanaLogIn();
+        vista.setVisible(true);
+        ControladorLogIn controlador = new ControladorLogIn(modelo, vista);
         
-        tititeamo.crearUsuario();
+        //tititeamo.crearUsuario();
         
         
         

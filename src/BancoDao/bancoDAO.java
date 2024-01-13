@@ -17,7 +17,8 @@ import modelo.Socio;
 public class bancoDAO implements bancoInterfaceDao{
     
     Banco banco = new Banco();
-    
+    Admin AdminAactual = null;
+    Admin SocioActual = null;
     
     
     
@@ -73,6 +74,31 @@ public class bancoDAO implements bancoInterfaceDao{
         System.out.println(banco.getSocios());
         
     } 
+
+    public Banco getBanco() {
+        return banco;
+    }
+
+    public void setBanco(Banco banco) {
+        this.banco = banco;
+    }
+
+    public Admin getAdminAactual() {
+        return AdminAactual;
+    }
+
+    public void setAdminAactual(Admin AdminAactual) {
+        this.AdminAactual = AdminAactual;
+    }
+
+    public Admin getSocioActual() {
+        return SocioActual;
+    }
+
+    public void setSocioActual(Admin SocioActual) {
+        this.SocioActual = SocioActual;
+    }
+    
     
     
 }
