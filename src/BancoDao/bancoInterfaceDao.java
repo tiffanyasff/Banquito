@@ -17,7 +17,7 @@ public interface bancoInterfaceDao {
     public void procesarPago(Socio socio, int cantidad);
     public boolean esPrimerDiaDelMes();
     public void realizarPago(Banco banco, int cantidad);
-    public void crearUsuario();
+    public void crearUsuario(String nombre, String id, String tipo);
     
     
     

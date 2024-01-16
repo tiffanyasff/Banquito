@@ -44,18 +44,7 @@ public class bancoDAO implements bancoInterfaceDao{
     }
 
     @Override
-    public void crearUsuario() {
-       Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Ingrese el nombre del usuario: ");
-        String nombre = scanner.nextLine();
-
-        System.out.print("Ingrese el ID del usuario: ");
-        String id = scanner.nextLine();
-
-        System.out.print("Ingrese el tipo de usuario (Admin/Socio): ");
-        String tipo = scanner.nextLine();
-
+    public void crearUsuario(String nombre, String id, String tipo) {
         // Crear el objeto Persona basado en el tipo
         //Persona nuevoUsuario = null;
         if ("Admin".equalsIgnoreCase(tipo)) {
