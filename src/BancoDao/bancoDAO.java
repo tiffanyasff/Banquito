@@ -63,6 +63,13 @@ public class bancoDAO implements bancoInterfaceDao{
         System.out.println(banco.getSocios());
         
     } 
+    
+        @Override
+    public void borrarUsuario(String nombre, String id, String tipo) {
+        
+        //q se borre del vector
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
     public Banco getBanco() {
         return banco;

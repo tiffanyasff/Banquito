@@ -8,6 +8,7 @@ import vista.VentanaLogIn;
 import BancoDao.bancoDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import modelo.Admin;
 import modelo.Banco;
 import modelo.Persona;
@@ -27,15 +28,16 @@ public class ControladorLogIn {
         this.modelo = modelo;
         this.vista = vista;
         vista.addBtnCrearListener(new ListenerCrear());
+        vista.addBtnIngresarListener(new ListenerIngresar());
     }
     
-    public void hacerLogIn(String nombre, String ID){
+    public boolean hacerLogIn(String nombre, String ID){
         
         for (Persona i : modelo.getBanco().getAdministradores()){
         
             if (i.getNombre().equals(nombre) && i.getId().equals(ID)) {
-                Admin adminActual = (Admin) i;  
-                break;  
+                Admin adminActual = (Admin) i; 
+                return true; 
             } 
             else {
             System.out.println("No se encontró un administrador con el nombre e ID proporcionados.");
@@ -45,11 +47,12 @@ public class ControladorLogIn {
         
             if (i.getNombre().equals(nombre) && i.getId().equals(ID)) {
                 Socio socioActual = (Socio) i;  
-                break;  
+                return true;
             }else{
                 System.out.println("No se encontró un socio con el nombre e ID proporcionados.");
             }
         }
+        return false;
     }
     
     class ListenerCrear implements ActionListener{
@@ -62,6 +65,23 @@ public class ControladorLogIn {
             vista.dispose();
         }
         
+    }
+    
+       class ListenerIngresar implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            String nombre = vista.getNombreJField().getText();
+            String ID = vista.getIdJField().getText();
+            
+            if(hacerLogIn(nombre, ID)){
+                
+                System.out.println("pablito");
+            }
+
+           
+        }  
     }
 
     public bancoDAO getModelo() {
