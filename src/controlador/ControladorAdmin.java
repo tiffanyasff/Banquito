@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import vista.VentanaAdmin;
 import vista.VentanaLogIn;
+import vista.VentanaRevisarSocio;
 
 /**
  *
@@ -23,14 +24,14 @@ public class ControladorAdmin {
     this.modelo = modelo;
     this.vista = vista;
     vista.getJLabelNombre().setText(modelo.getAdminAactual().getNombre());
-    /*vista.addBtnSalirListener(new SalirListener());
-    vista.addBtnGananciasListener(new GananciasListener());
-    vista.addBtnActualizarProductoListener(new ActualizarProductoListener());
+    vista.addBtnSalirListener(new SalirListener());
+    vista.addBtnRevisarSocioListener(new RevisarSocioListener());
+    /*vista.addBtnActualizarProductoListener(new ActualizarProductoListener());
     vista.addBtnEliminarProductoListener(new btnEliminarProducto());
     vista.addBtnPerfilListener(new btnModificarUsuario());*/
         
     }
-    
+    //poner lisener salir, ver socio y prestamo
         class SalirListener implements ActionListener{
 
         @Override
@@ -39,9 +40,22 @@ public class ControladorAdmin {
             ventana.setVisible(true);
             vista.dispose();
             ControladorLogIn cont = new ControladorLogIn(modelo, ventana);
+            modelo.setAdminAactual(null);
         }
-    
-    
+ 
+    }
+        
+        class RevisarSocioListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            VentanaRevisarSocio ventana = new VentanaRevisarSocio();
+            ventana.setVisible(true);
+            vista.dispose();
+            ControladorRevisar cont = new ControladorRevisar(modelo, ventana);
+        }
+ 
+        
     }
     
 }

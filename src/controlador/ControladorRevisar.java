@@ -5,6 +5,9 @@
 package controlador;
 
 import BancoDao.bancoDAO;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import vista.VentanaAdmin;
 import vista.VentanaRevisarSocio;
 
 /**
@@ -20,6 +23,18 @@ public class ControladorRevisar {
     public ControladorRevisar(bancoDAO modelo, VentanaRevisarSocio vista) {
     this.modelo = modelo;
     this.vista = vista;
-        
+     vista.addBtnSalirListener(new ControladorRevisar.SalirListener());   
+    }
+    
+    class SalirListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            VentanaAdmin ventana = new VentanaAdmin ();
+            ventana.setVisible(true);
+            vista.dispose();
+            ControladorAdmin cont = new ControladorAdmin(modelo, ventana);
+        }
+ 
     }
 }

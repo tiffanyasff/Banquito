@@ -13,7 +13,9 @@ import modelo.Admin;
 import modelo.Banco;
 import modelo.Persona;
 import modelo.Socio;
+import vista.VentanaAdmin;
 import vista.VentanaCrear;
+import vista.VentanaSocio;
 
 /**
  *
@@ -36,7 +38,7 @@ public class ControladorLogIn {
         for (Persona i : modelo.getBanco().getAdministradores()){
         
             if (i.getNombre().equals(nombre) && i.getId().equals(ID)) {
-                Admin adminActual = (Admin) i; 
+                modelo.setAdminAactual((Admin) i); 
                 return true; 
             } 
             else {
@@ -46,7 +48,7 @@ public class ControladorLogIn {
         for (Persona i : modelo.getBanco().getSocios()){
         
             if (i.getNombre().equals(nombre) && i.getId().equals(ID)) {
-                Socio socioActual = (Socio) i;  
+                modelo.setSocioActual((Socio) i);  
                 return true;
             }else{
                 System.out.println("No se encontró un socio con el nombre e ID proporcionados.");
@@ -76,8 +78,24 @@ public class ControladorLogIn {
             String ID = vista.getIdJField().getText();
             
             if(hacerLogIn(nombre, ID)){
-                
+                if (modelo.getAdminAactual() != null) {
+                    
+                    vista.dispose();
+                    VentanaAdmin vista = new VentanaAdmin();
+                    vista.setVisible(true);
+                    ControladorAdmin controlador = new ControladorAdmin(modelo, vista);
+  
+                }else if (modelo.getSocioActual() != null) {
+                    
+                    vista.dispose();
+                    VentanaSocio vista = new VentanaSocio();
+                    vista.setVisible(true);
+                    ControladorSocio controlador = new ControladorSocio(modelo, vista);
+         
+                }
+                    
                 System.out.println("pablito");
+                
             }
 
            

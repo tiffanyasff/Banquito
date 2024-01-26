@@ -18,7 +18,7 @@ public class bancoDAO implements bancoInterfaceDao{
     
     Banco banco = new Banco();
     Admin AdminAactual = null;
-    Admin SocioActual = null;
+    Socio SocioActual = null;
     
     
     
@@ -67,8 +67,8 @@ public class bancoDAO implements bancoInterfaceDao{
         @Override
     public void borrarUsuario(String nombre, String id, String tipo) {
         
-        //q se borre del vector
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        banco.getSocios().remove(SocioActual);
+         System.out.println("eliminado");
     }
 
     public Banco getBanco() {
@@ -87,11 +87,11 @@ public class bancoDAO implements bancoInterfaceDao{
         this.AdminAactual = AdminAactual;
     }
 
-    public Admin getSocioActual() {
+    public Socio getSocioActual() {
         return SocioActual;
     }
 
-    public void setSocioActual(Admin SocioActual) {
+    public void setSocioActual(Socio SocioActual) {
         this.SocioActual = SocioActual;
     }
     
