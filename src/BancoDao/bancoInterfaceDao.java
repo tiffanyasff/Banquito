@@ -18,7 +18,7 @@ public interface bancoInterfaceDao {
     public boolean esPrimerDiaDelMes();
     public void realizarPago(Banco banco, int cantidad);
     public void crearUsuario(String nombre, String id, String tipo);
-    public void borrarUsuario(String nombre, String id, String tipo);
+    public void eliminarUsuario();
     
     
     

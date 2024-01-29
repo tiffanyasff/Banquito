@@ -64,11 +64,10 @@ public class bancoDAO implements bancoInterfaceDao{
         
     } 
     
-        @Override
-    public void borrarUsuario(String nombre, String id, String tipo) {
-        
+     @Override
+    public void eliminarUsuario() {
         banco.getSocios().remove(SocioActual);
-         System.out.println("eliminado");
+        System.out.println("eliminado");
     }
 
     public Banco getBanco() {

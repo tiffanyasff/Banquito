@@ -4,6 +4,8 @@
  */
 package vista;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Andres
@@ -27,47 +29,59 @@ public class VentanaSocio extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        JLabelSaldo = new javax.swing.JLabel();
+        btnSalir = new javax.swing.JButton();
+        btnRealizarPago = new javax.swing.JButton();
+        btnEliminarCuenta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("saldo actual:0");
+        JLabelSaldo.setText("saldo actual:0");
 
-        jButton1.setText("salir");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setText("salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
 
-        jButton2.setText("realizar pago");
+        btnRealizarPago.setText("realizar pago");
+
+        btnEliminarCuenta.setText("Borrar cuenta");
+        btnEliminarCuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarCuentaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(63, 63, 63))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(JLabelSaldo))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(btnSalir)
+                        .addGap(30, 30, 30)
+                        .addComponent(btnRealizarPago)
+                        .addGap(30, 30, 30)
+                        .addComponent(btnEliminarCuenta)))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(58, 58, 58)
-                .addComponent(jLabel1)
+                .addComponent(JLabelSaldo)
                 .addGap(92, 92, 92)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnSalir)
+                    .addComponent(btnRealizarPago)
+                    .addComponent(btnEliminarCuenta))
                 .addContainerGap(111, Short.MAX_VALUE))
         );
 
@@ -85,9 +99,13 @@ public class VentanaSocio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnEliminarCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCuentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarCuentaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,9 +143,25 @@ public class VentanaSocio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel JLabelSaldo;
+    private javax.swing.JButton btnEliminarCuenta;
+    private javax.swing.JButton btnRealizarPago;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    public void addBtnEliminarListener(ActionListener listener) {
+        btnEliminarCuenta.addActionListener(listener);
+    }
+     
+    public void addBtnRealizarPagoListener(ActionListener listener) {
+        btnRealizarPago.addActionListener(listener);
+    }
+    
+    public void addBtnSalirListener(ActionListener listener) {
+        btnSalir.addActionListener(listener);
+    }
+    
+   
+
 }

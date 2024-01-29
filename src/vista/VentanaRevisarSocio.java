@@ -35,8 +35,6 @@ public class VentanaRevisarSocio extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         idJField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        nombreJField = new javax.swing.JTextField();
-        btnBorrar = new javax.swing.JButton();
         btnBalance = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
 
@@ -50,15 +48,6 @@ public class VentanaRevisarSocio extends javax.swing.JFrame {
         });
 
         jLabel1.setText("Buscar socio aqui");
-
-        nombreJField.setText("Nombre");
-
-        btnBorrar.setText("Borrar socio");
-        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBorrarActionPerformed(evt);
-            }
-        });
 
         btnBalance.setText("Balance socio");
 
@@ -74,25 +63,19 @@ public class VentanaRevisarSocio extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(idJField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(nombreJField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(59, 59, 59)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addComponent(idJField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(btnBorrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                .addComponent(btnBalance)
-                .addGap(75, 75, 75))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(147, 147, 147)
-                .addComponent(btnSalir)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(btnSalir))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addComponent(btnBalance)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -101,14 +84,10 @@ public class VentanaRevisarSocio extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(nombreJField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(idJField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBorrar)
-                    .addComponent(btnBalance))
-                .addGap(67, 67, 67)
+                    .addComponent(idJField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addComponent(btnBalance)
+                .addGap(64, 64, 64)
                 .addComponent(btnSalir)
                 .addGap(50, 50, 50))
         );
@@ -130,10 +109,6 @@ public class VentanaRevisarSocio extends javax.swing.JFrame {
     private void idJFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idJFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_idJFieldActionPerformed
-
-    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBorrarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
@@ -176,12 +151,10 @@ public class VentanaRevisarSocio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBalance;
-    private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JTextField idJField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField nombreJField;
     // End of variables declaration//GEN-END:variables
 
     public void addBtnSalirListener(ActionListener listener) {
@@ -194,14 +167,6 @@ public class VentanaRevisarSocio extends javax.swing.JFrame {
 
     public void setBtnBalance(JButton btnBalance) {
         this.btnBalance = btnBalance;
-    }
-
-    public JButton getBtnBorrar() {
-        return btnBorrar;
-    }
-
-    public void setBtnBorrar(JButton btnBorrar) {
-        this.btnBorrar = btnBorrar;
     }
 
     public JButton getBtnSalir() {
@@ -235,15 +200,4 @@ public class VentanaRevisarSocio extends javax.swing.JFrame {
     public void setjPanel1(JPanel jPanel1) {
         this.jPanel1 = jPanel1;
     }
-
-    public JTextField getNombreJField() {
-        return nombreJField;
-    }
-
-    public void setNombreJField(JTextField nombreJField) {
-        this.nombreJField = nombreJField;
-    }
-
-    
-
 }
