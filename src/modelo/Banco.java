@@ -15,12 +15,14 @@ public class Banco {
     private int saldoBanco;
     private ArrayList<Persona> socios;
     private ArrayList<Persona> administradores;
+    private ArrayList<Prestamo> prestamos;
     
     
     public Banco() {
         this.saldoBanco = 0;
         this.socios = new ArrayList<Persona>();
         this.administradores = new ArrayList<Persona>();
+        this.prestamos = new ArrayList<Prestamo>();
         
     }
     
@@ -34,7 +36,13 @@ public class Banco {
             System.out.println("Error: Fondos insuficientes para realizar el pago.");
         }    
     }
-
+    
+    public void guardarPrestamo(Prestamo prestamo){
+    
+         getPrestamos().add(prestamo);
+         System.out.println("sisa manito");//has que se imprima el prestamo desde el vector no seas peye
+    }
+    
     public int getSaldoBanco() {
         return saldoBanco;
     }
@@ -58,6 +66,16 @@ public class Banco {
     public void setAdministradores(ArrayList<Persona> usuarios) {
         this.administradores = usuarios;
     }
+
+    public ArrayList<Prestamo> getPrestamos() {
+        return prestamos;
+    }
+
+    public void setPrestamos(ArrayList<Prestamo> prestamos) {
+        this.prestamos = prestamos;
+    }
+    
+    
     
     
     

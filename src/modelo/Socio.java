@@ -52,5 +52,15 @@ public class Socio extends Persona {
     public LocalDateTime getFechaActual() {
         return fechaActual;
     }
+
+    public int getDinero() {
+        return dinero;
+    }
+
+    public void setDinero(int dinero) {
+        this.dinero = dinero;
+    }
+    
+    
     
 }

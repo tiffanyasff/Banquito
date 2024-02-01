@@ -5,9 +5,11 @@
 package BancoDao;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 import modelo.Admin;
 import modelo.Banco;
 import modelo.Persona;
+import modelo.Prestamo;
 import modelo.Socio;
 
 /**
@@ -42,12 +44,19 @@ public class bancoDAO implements bancoInterfaceDao{
     public void realizarPago(Banco banco, int cantidad) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
+     @Override
+    public void crearPrestamo(String idSocio, int cantidadPrestamo, int cuotas) {
+       
+        Prestamo prestamo = new Prestamo (idSocio, cantidadPrestamo, cuotas) ;
+         banco.guardarPrestamo(prestamo);
+    }
 
     @Override
     public void crearUsuario(String nombre, String id, String tipo) {
         // Crear el objeto Persona basado en el tipo
         //Persona nuevoUsuario = null;
-        if ("Admin".equalsIgnoreCase(tipo)) {
+        if ("Admin".equalsIgnoreCase(tipo)) {   
             Admin nuevoUsuario = new Admin(nombre, id, tipo);
             banco.getAdministradores().add(nuevoUsuario);
             System.out.println("Usuario creado exitosamente: " );
@@ -68,6 +77,20 @@ public class bancoDAO implements bancoInterfaceDao{
     public void eliminarUsuario() {
         banco.getSocios().remove(SocioActual);
         System.out.println("eliminado");
+    }
+    
+    @Override
+    public void revisarSocio(String id) {
+        
+        for ( Persona socio : banco.getSocios()) {
+            if (socio.getId().equals(id)){
+                JOptionPane.showMessageDialog(null, "Éxito");
+                break; 
+            
+            }
+                 
+        }
+        
     }
 
     public Banco getBanco() {

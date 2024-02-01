@@ -19,6 +19,8 @@ public interface bancoInterfaceDao {
     public void realizarPago(Banco banco, int cantidad);
     public void crearUsuario(String nombre, String id, String tipo);
     public void eliminarUsuario();
+    public void crearPrestamo(String idSocio, int cantidadPrestamo, int cuotas);
+    public void revisarSocio (Socio socio);
     
     
     
