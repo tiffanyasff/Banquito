@@ -161,6 +161,10 @@ public class VentanaRevisarSocio extends javax.swing.JFrame {
         btnSalir.addActionListener(listener);
     }
     
+     public void addBtnBalanceListener(ActionListener listener) {
+        btnBalance.addActionListener(listener);
+    }
+    
     public JButton getBtnBalance() {
         return btnBalance;
     }

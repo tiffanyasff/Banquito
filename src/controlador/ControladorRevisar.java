@@ -23,7 +23,8 @@ public class ControladorRevisar {
     public ControladorRevisar(bancoDAO modelo, VentanaRevisarSocio vista) {
     this.modelo = modelo;
     this.vista = vista;
-     vista.addBtnSalirListener(new ControladorRevisar.SalirListener());   
+     vista.addBtnSalirListener(new ControladorRevisar.SalirListener());  
+     vista.addBtnBalanceListener(new ControladorRevisar.BalanceListener());
     }
     
     class SalirListener implements ActionListener{
@@ -34,6 +35,15 @@ public class ControladorRevisar {
             ventana.setVisible(true);
             vista.dispose();
             ControladorAdmin cont = new ControladorAdmin(modelo, ventana);
+        }
+ 
+    }
+    
+    class BalanceListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            modelo.revisarSocio(vista.getIdJField().getText());
         }
  
     }
