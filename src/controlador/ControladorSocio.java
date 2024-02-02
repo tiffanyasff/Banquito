@@ -23,8 +23,9 @@ public class ControladorSocio {
     public ControladorSocio(bancoDAO modelo, VentanaSocio vista) {
     this.modelo = modelo;
     this.vista = vista;
+    vista.getJLabelSaldo().setText("Saldo disponible: " + modelo.getSocioActual().getDinero());
     vista.addBtnEliminarListener(new btnEliminarListener());
-     vista.addBtnSalirListener(new SalirListener());
+    vista.addBtnSalirListener(new SalirListener());
     
     }
     

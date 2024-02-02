@@ -84,9 +84,9 @@ public class bancoDAO implements bancoInterfaceDao{
         
         for ( Persona socio : banco.getSocios()) {
             if (socio.getId().equals(id)){
-                JOptionPane.showMessageDialog(null, "Balance actual:"+socio.getDinero());
+                JOptionPane.showMessageDialog(null, "Balance actual: "+socio.getDinero());
                 break; 
-
+                
             }
                  
         }

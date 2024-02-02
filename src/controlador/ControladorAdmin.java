@@ -24,6 +24,8 @@ public class ControladorAdmin {
     public ControladorAdmin(bancoDAO modelo, VentanaAdmin vista) {
     this.modelo = modelo;
     this.vista = vista;
+    vista.getjLabelTotalBanco().setText("" + modelo.getBanco().getSaldoBanco());
+   // vista.getJLabelSaldo().setText("Saldo disponible: " + modelo.getSocioActual().getDinero());
     vista.getJLabelNombre().setText(modelo.getAdminAactual().getNombre());
     vista.addBtnSalirListener(new SalirListener());
     vista.addBtnRevisarSocioListener(new RevisarSocioListener());

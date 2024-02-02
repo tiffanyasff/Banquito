@@ -5,6 +5,9 @@
 package vista;
 
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -161,6 +164,48 @@ public class VentanaSocio extends javax.swing.JFrame {
     public void addBtnSalirListener(ActionListener listener) {
         btnSalir.addActionListener(listener);
     }
+
+    public JLabel getJLabelSaldo() {
+        return JLabelSaldo;
+    }
+
+    public void setJLabelSaldo(JLabel JLabelSaldo) {
+        this.JLabelSaldo = JLabelSaldo;
+    }
+
+    public JButton getBtnEliminarCuenta() {
+        return btnEliminarCuenta;
+    }
+
+    public void setBtnEliminarCuenta(JButton btnEliminarCuenta) {
+        this.btnEliminarCuenta = btnEliminarCuenta;
+    }
+
+    public JButton getBtnRealizarPago() {
+        return btnRealizarPago;
+    }
+
+    public void setBtnRealizarPago(JButton btnRealizarPago) {
+        this.btnRealizarPago = btnRealizarPago;
+    }
+
+    public JButton getBtnSalir() {
+        return btnSalir;
+    }
+
+    public void setBtnSalir(JButton btnSalir) {
+        this.btnSalir = btnSalir;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+    
+    
     
    
 
