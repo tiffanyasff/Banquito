@@ -4,6 +4,7 @@
  */
 package BancoDao;
 
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 import modelo.Admin;
@@ -32,7 +33,15 @@ public class bancoDAO implements bancoInterfaceDao{
 
     @Override
     public void procesarPago(Socio socio, int cantidad) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (socio.getDinero() >= cantidad) {
+            // Realizar la transacción
+            socio.sumarDinero(-cantidad); // Restar la cantidad al comprador
+            int nuevoSaldo = getBanco().getSaldoBanco() + cantidad; 
+            getBanco().setSaldoBanco(nuevoSaldo);
+            System.out.println("Pago procesado: " + cantidad + " unidades. Nuevo saldo del banco: " + getBanco().getSaldoBanco());
+        } else {
+            System.out.println("Error: Fondos insuficientes para realizar el pago.");
+        }    
     }
 
     @Override
@@ -42,7 +51,17 @@ public class bancoDAO implements bancoInterfaceDao{
 
     @Override
     public void realizarPago(Banco banco, int cantidad) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         //System.out.println("Nombre del socio: " + nombre);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String fechaFormateada = getSocioActual().getFechaActual().format(formatter); 
+        System.out.println("Fecha de transaccion: " + fechaFormateada);
+
+        if (getSocioActual().getDinero() >= 25 && esPrimerDiaDelMes()) {
+            System.out.println("Pago automatico realizado");
+            procesarPago(getSocioActual(), cantidad);
+        } else {
+            System.out.println("No se ha realizado pago automatico");
+        }
     }
     
      @Override

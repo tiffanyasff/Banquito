@@ -34,19 +34,7 @@ public class Socio extends Persona {
     }
     
     //tal vez esta funcion deba cambiar i poner el for esprimer dia afuera y adentro un if con realizar pago si le alcanza la plata
-    public void realizarPago(Banco banco, int cantidad) {
-        //System.out.println("Nombre del socio: " + nombre);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String fechaFormateada = getFechaActual().format(formatter);
-        System.out.println("Fecha de transaccion: " + fechaFormateada);
-
-        if (dinero >= 25 && esPrimerDiaDelMes()) {
-            System.out.println("Pago automatico realizado");
-            banco.procesarPago(this, cantidad);
-        } else {
-            System.out.println("No se ha realizado pago automatico");
-        }
-    } 
+ 
     
      // Getter para obtener la fecha de creación
     public LocalDateTime getFechaActual() {

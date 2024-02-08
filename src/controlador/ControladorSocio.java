@@ -26,7 +26,7 @@ public class ControladorSocio {
     vista.getJLabelSaldo().setText("Saldo disponible: " + modelo.getSocioActual().getDinero());
     vista.addBtnEliminarListener(new btnEliminarListener());
     vista.addBtnSalirListener(new SalirListener());
-    
+    vista.addBtnRealizarPagoListener(new RealizarPagoListener());
     }
     
     class btnEliminarListener implements ActionListener{
@@ -55,6 +55,17 @@ public class ControladorSocio {
             vista.dispose();
             ControladorLogIn cont = new ControladorLogIn(modelo, ventana);
             modelo.setSocioActual(null);
+        }
+ 
+    }
+        
+        class RealizarPagoListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            //hacer el pago al banco lol
+            //algo que le diga si es ahorro o prestamo y si es ahorro plata pal banco si es pal prestamo que vea si le alcanza y reste una cuota
+          modelo.procesarPago(modelo.getSocioActual(), modelo.getSocioActual().getDinero() );
         }
  
     }

@@ -21,6 +21,7 @@ public interface bancoInterfaceDao {
     public void eliminarUsuario();
     public void crearPrestamo(String idSocio, int cantidadPrestamo, int cuotas);
     public void revisarSocio (String id);
+   
     
     
     

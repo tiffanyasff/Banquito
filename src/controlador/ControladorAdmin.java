@@ -24,16 +24,12 @@ public class ControladorAdmin {
     public ControladorAdmin(bancoDAO modelo, VentanaAdmin vista) {
     this.modelo = modelo;
     this.vista = vista;
-    vista.getjLabelTotalBanco().setText("" + modelo.getBanco().getSaldoBanco());
-   // vista.getJLabelSaldo().setText("Saldo disponible: " + modelo.getSocioActual().getDinero());
+    vista.getjLabelTotalBanco().setText("Fondos disponibles:" + modelo.getBanco().getSaldoBanco());
     vista.getJLabelNombre().setText(modelo.getAdminAactual().getNombre());
     vista.addBtnSalirListener(new SalirListener());
     vista.addBtnRevisarSocioListener(new RevisarSocioListener());
     vista.addBtnPrestamoListener(new PrestamoListener());
-    /*vista.addBtnActualizarProductoListener(new ActualizarProductoListener());
-    vista.addBtnEliminarProductoListener(new btnEliminarProducto());
-    vista.addBtnPerfilListener(new btnModificarUsuario());*/
-        
+
     }
     //poner lisener salir, ver socio y prestamo
         class SalirListener implements ActionListener{
@@ -76,6 +72,6 @@ public class ControladorAdmin {
         }
         
     }
-     
+        
     
 }
